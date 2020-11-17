@@ -1,7 +1,8 @@
 import com.avereon.acorn.AcornMod;
 
-module com.avereon.acorn {
+module com.avereon.acornmod {
 
+	requires com.avereon.acorn;
 	requires com.avereon.xenon;
 	requires java.management;
 
