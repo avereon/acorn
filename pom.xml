@@ -88,7 +88,7 @@
   				<appendAssemblyId>false</appendAssemblyId>
 					<archive>
 						<manifest>
-							<mainClass>com.avereon.acorn.Program</mainClass>
+							<mainClass>com.avereon.acornmod.Program</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
@@ -128,7 +128,7 @@
 								<configuration>
 									<images>
 										<image>
-											<class>com.avereon.acorn.AcornIcon</class>
+											<class>com.avereon.acornmod.AcornIcon</class>
 											<target>${images-folder}/product.png</target>
 											<theme>light</theme>
 										</image>

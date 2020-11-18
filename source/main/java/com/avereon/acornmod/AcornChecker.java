@@ -1,6 +1,6 @@
-package com.avereon.acorn;
+package com.avereon.acornmod;
 
-import com.avereon.acorn.test.LoadTest;
+import com.avereon.acornmod.test.LoadTest;
 import com.avereon.util.Log;
 import com.avereon.xenon.task.Task;
 

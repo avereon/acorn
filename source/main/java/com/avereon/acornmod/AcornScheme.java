@@ -1,4 +1,4 @@
-package com.avereon.acorn;
+package com.avereon.acornmod;
 
 import com.avereon.xenon.Program;
 import com.avereon.xenon.scheme.BaseScheme;

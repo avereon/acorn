@@ -1,4 +1,4 @@
-package com.avereon.acorn.test;
+package com.avereon.acornmod.test;
 
 import java.util.Random;
 

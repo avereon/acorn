@@ -1,4 +1,4 @@
-import com.avereon.acorn.AcornMod;
+import com.avereon.acornmod.AcornMod;
 
 module com.avereon.acornmod {
 
@@ -6,10 +6,10 @@ module com.avereon.acornmod {
 	requires com.avereon.xenon;
 	requires java.management;
 
-	opens com.avereon.acorn.bundles;
-	opens com.avereon.acorn.settings;
+	opens com.avereon.acornmod.bundles;
+	opens com.avereon.acornmod.settings;
 
-	exports com.avereon.acorn to com.avereon.xenon, com.avereon.zerra;
+	exports com.avereon.acornmod to com.avereon.xenon, com.avereon.zerra;
 
 	provides com.avereon.xenon.Mod with AcornMod;
 }

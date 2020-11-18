@@ -1,4 +1,4 @@
-package com.avereon.acorn;
+package com.avereon.acornmod;
 
 import com.avereon.product.ProductCard;
 import com.avereon.util.Log;
