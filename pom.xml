@@ -71,7 +71,7 @@
 				<artifactId>maven-assembly-plugin</artifactId>
 				<executions>
 					<execution>
-						<id>make-assembly</id>
+						<id>assembly-product</id>
 						<phase>package</phase>
 						<goals>
 							<goal>single</goal>
@@ -80,7 +80,7 @@
 				</executions>
 				<configuration>
 					<descriptorRefs>
-						<descriptorRef>mod</descriptorRef>
+						<descriptorRef>module</descriptorRef>
 					</descriptorRefs>
 					<attach>false</attach>
 					<finalName>product</finalName>
