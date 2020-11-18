@@ -48,7 +48,6 @@
 	</properties>
 
 	<dependencies>
-
 		<dependency>
 			<groupId>com.avereon</groupId>
 			<artifactId>acorn</artifactId>

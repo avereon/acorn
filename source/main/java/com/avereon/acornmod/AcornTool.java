@@ -37,7 +37,7 @@ public class AcornTool extends ProgramTool {
 
 	private final Label message;
 
-	private AcornChecker checker;
+	private AcornTask checker;
 
 	public AcornTool( ProgramProduct product, Asset asset ) {
 		super( product, asset );
@@ -51,7 +51,7 @@ public class AcornTool extends ProgramTool {
 
 		cpuLoadListener = d -> log.log( Log.DEBUG, "cpu=" + d );
 
-		result = new Label( "", getProgram().getIconLibrary().getIcon( "acorn", 64 ) );
+		result = new Label( "", getProgram().getIconLibrary().getIcon( product.getCard().getArtifact(), 64 ) );
 		result.getStyleClass().addAll( "result" );
 		button = new Button( startText );
 		//button.getStyleClass().addAll( "button" );
@@ -109,7 +109,7 @@ public class AcornTool extends ProgramTool {
 	}
 
 	private void start() {
-		checker = new AcornChecker();
+		checker = new AcornTask();
 		checker.register( TaskEvent.SUBMITTED, e -> {
 			Fx.run( () -> progress.setProgress( 0 ) );
 			updateButtonText();
