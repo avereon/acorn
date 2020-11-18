@@ -80,16 +80,11 @@
 				</executions>
 				<configuration>
 					<descriptorRefs>
-						<descriptorRef>jar-with-dependencies</descriptorRef>
+						<descriptorRef>mod</descriptorRef>
 					</descriptorRefs>
 					<attach>false</attach>
 					<finalName>product</finalName>
   				<appendAssemblyId>false</appendAssemblyId>
-					<archive>
-						<manifest>
-							<mainClass>com.avereon.acornmod.Program</mainClass>
-						</manifest>
-					</archive>
 				</configuration>
 			</plugin>
 
