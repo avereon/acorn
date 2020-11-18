@@ -68,27 +68,6 @@
 
 		<plugins>
 			<plugin>
-				<artifactId>maven-assembly-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>assembly-product</id>
-						<phase>package</phase>
-						<goals>
-							<goal>single</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<descriptorRefs>
-						<descriptorRef>module-2</descriptorRef>
-					</descriptorRefs>
-					<attach>false</attach>
-					<finalName>product</finalName>
-  				<appendAssemblyId>false</appendAssemblyId>
-				</configuration>
-			</plugin>
-
-			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<!-- Version comes from parent -->
@@ -109,6 +88,22 @@
 			<id>packs</id>
 			<build>
 				<plugins>
+					<plugin>
+						<artifactId>maven-assembly-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>assembly-product</id>
+								<configuration>
+									<descriptorRefs>
+										<descriptorRef>module-2</descriptorRef>
+									</descriptorRefs>
+									<attach>false</attach>
+									<appendAssemblyId>false</appendAssemblyId>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+
 					<plugin>
 						<groupId>com.avereon</groupId>
 						<artifactId>cameo</artifactId>
