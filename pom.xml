@@ -89,22 +89,6 @@
 			<build>
 				<plugins>
 					<plugin>
-						<artifactId>maven-assembly-plugin</artifactId>
-						<executions>
-							<execution>
-								<id>assembly-product</id>
-								<configuration>
-									<descriptorRefs>
-										<descriptorRef>module-2</descriptorRef>
-									</descriptorRefs>
-									<attach>false</attach>
-									<appendAssemblyId>false</appendAssemblyId>
-								</configuration>
-							</execution>
-						</executions>
-					</plugin>
-
-					<plugin>
 						<groupId>com.avereon</groupId>
 						<artifactId>cameo</artifactId>
 						<executions>
@@ -122,6 +106,20 @@
 											<theme>light</theme>
 										</image>
 									</images>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+
+					<plugin>
+						<artifactId>maven-assembly-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>assembly-product</id>
+								<configuration>
+									<descriptorRefs>
+										<descriptorRef>module-2</descriptorRef>
+									</descriptorRefs>
 								</configuration>
 							</execution>
 						</executions>
