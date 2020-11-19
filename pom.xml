@@ -79,6 +79,20 @@
 				</configuration>
 			</plugin>
 
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<executions>
+					<execution>
+						<!-- Must match execution id in parent pom -->
+						<id>assembly-product</id>
+						<configuration>
+							<descriptorRefs>
+								<descriptorRef>module-2</descriptorRef>
+							</descriptorRefs>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 
 	</build>
@@ -106,20 +120,6 @@
 											<theme>light</theme>
 										</image>
 									</images>
-								</configuration>
-							</execution>
-						</executions>
-					</plugin>
-
-					<plugin>
-						<artifactId>maven-assembly-plugin</artifactId>
-						<executions>
-							<execution>
-								<id>assembly-product</id>
-								<configuration>
-									<descriptorRefs>
-										<descriptorRef>module-2</descriptorRef>
-									</descriptorRefs>
 								</configuration>
 							</execution>
 						</executions>
