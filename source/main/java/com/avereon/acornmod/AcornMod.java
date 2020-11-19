@@ -19,7 +19,7 @@ public class AcornMod extends Mod {
 	@Override
 	public void startup() throws Exception {
 		super.startup();
-		registerIcon( getCard().getArtifact(), new AcornIcon() );
+		registerIcon( "acorn", new AcornIcon() );
 
 		getProgram().getAssetManager().addScheme( new AcornScheme( getProgram() ) );
 

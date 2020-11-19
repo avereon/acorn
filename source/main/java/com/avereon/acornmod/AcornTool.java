@@ -43,7 +43,7 @@ public class AcornTool extends ProgramTool {
 		super( product, asset );
 		addStylesheet( AcornMod.STYLESHEET );
 		getStyleClass().addAll( "acorn-tool" );
-		setIcon( product.getCard().getArtifact() );
+		setIcon( "acorn" );
 
 		String acornText = product.rb().text( BundleKey.LABEL, "acorn" );
 		String startText = product.rb().text( BundleKey.LABEL, "start" );
@@ -51,7 +51,7 @@ public class AcornTool extends ProgramTool {
 
 		cpuLoadListener = d -> log.log( Log.DEBUG, "cpu=" + d );
 
-		result = new Label( "", getProgram().getIconLibrary().getIcon( product.getCard().getArtifact(), 64 ) );
+		result = new Label( "", getProgram().getIconLibrary().getIcon( "acorn", 64 ) );
 		result.getStyleClass().addAll( "result" );
 		button = new Button( startText );
 		//button.getStyleClass().addAll( "button" );
