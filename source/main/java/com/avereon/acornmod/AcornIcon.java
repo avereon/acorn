@@ -25,7 +25,7 @@ public class AcornIcon extends RenderedIcon {
 	public AcornIcon() {
 		Color lightPaint = Color.SADDLEBROWN.deriveColor( 0, 0.5, 0.8, 1 );
 		Color darkPaint = lightPaint.deriveColor( 0, 1.2, 1.5, 1 );
-		setStyle( "-fx-stroke: ladder( -fx-text-background-color, " + Colors.web( lightPaint ) + " 50%, " + Colors.web( darkPaint ) + " 50% );" );
+		setStyle( "-fx-stroke: ladder( -fx-text-background-color, " + Colors.toString( lightPaint ) + " 50%, " + Colors.toString( darkPaint ) + " 50% );" );
 	}
 
 	@Override
