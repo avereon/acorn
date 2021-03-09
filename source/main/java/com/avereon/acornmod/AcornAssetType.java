@@ -1,5 +1,6 @@
 package com.avereon.acornmod;
 
+import com.avereon.product.Rb;
 import com.avereon.xenon.BundleKey;
 import com.avereon.xenon.Program;
 import com.avereon.xenon.ProgramProduct;
@@ -27,7 +28,7 @@ public class AcornAssetType extends AssetType {
 	@Override
 	public boolean assetOpen( Program program, Asset asset ) throws AssetException {
 		asset.setUri( URI );
-		asset.setName( getProduct().rb().text( BundleKey.ASSET, "acorn-name") );
+		asset.setName( Rb.text( BundleKey.ASSET, "acorn-name") );
 		asset.setModified( false );
 		return true;
 	}
