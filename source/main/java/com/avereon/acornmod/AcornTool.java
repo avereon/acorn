@@ -1,7 +1,6 @@
 package com.avereon.acornmod;
 
 import com.avereon.product.Rb;
-import com.avereon.util.Log;
 import com.avereon.xenon.BundleKey;
 import com.avereon.xenon.ProgramProduct;
 import com.avereon.xenon.ProgramTool;
@@ -15,14 +14,14 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.ProgressIndicator;
 import javafx.scene.layout.VBox;
+import lombok.CustomLog;
 
 import java.util.Timer;
 import java.util.concurrent.ExecutionException;
 import java.util.function.Consumer;
 
+@CustomLog
 public class AcornTool extends ProgramTool {
-
-	private static final System.Logger log = Log.get();
 
 	private static final Timer timer = new Timer( true );
 
@@ -34,7 +33,7 @@ public class AcornTool extends ProgramTool {
 
 	private SystemCpuLoadCheck cpuLoadCheck;
 
-	private Button button;
+	private final Button button;
 
 	private final Label message;
 
@@ -50,7 +49,7 @@ public class AcornTool extends ProgramTool {
 		String startText = Rb.text( BundleKey.LABEL, "start" );
 		String waitingText = Rb.text( "message", "waiting-to-start" );
 
-		cpuLoadListener = d -> log.log( Log.DEBUG, "cpu=" + d );
+		cpuLoadListener = d -> log.atFine().log( "cpu=%s", d );
 
 		result = new Label( "", getProgram().getIconLibrary().getIcon( "acorn", 64 ) );
 		result.getStyleClass().addAll( "result" );
@@ -120,7 +119,7 @@ public class AcornTool extends ProgramTool {
 			try {
 				setScore( checker.get() );
 			} catch( InterruptedException | ExecutionException exception ) {
-				log.log( Log.WARN, "Error computing acorn count", exception );
+				log.atWarning().withCause( exception ).log( "Error computing acorn count" );
 			}
 		} ) );
 		checker.register( TaskEvent.CANCEL, e -> Fx.run( () -> progress.setProgress( 0 ) ) );

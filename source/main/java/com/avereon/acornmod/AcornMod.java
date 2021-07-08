@@ -1,14 +1,13 @@
 package com.avereon.acornmod;
 
-import com.avereon.util.Log;
 import com.avereon.xenon.Mod;
 import com.avereon.xenon.ToolRegistration;
+import lombok.CustomLog;
 
+@CustomLog
 public class AcornMod extends Mod {
 
 	public static final String STYLESHEET = "acorn.css";
-
-	private static System.Logger log = Log.get();
 
 	private AcornAssetType acornAssetType;
 
