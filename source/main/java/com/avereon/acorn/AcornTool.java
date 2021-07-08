@@ -1,4 +1,4 @@
-package com.avereon.acornmod;
+package com.avereon.acorn;
 
 import com.avereon.product.Rb;
 import com.avereon.xenon.BundleKey;

@@ -12,11 +12,11 @@
 	</parent>
 
 	<groupId>com.avereon</groupId>
-	<artifactId>acornmod</artifactId>
+	<artifactId>acorn</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>Acorn Mod</name>
+	<name>Acorn</name>
 	<description>Simple system profiling utility</description>
 	<inceptionYear>2020</inceptionYear>
 
@@ -51,7 +51,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.avereon</groupId>
-			<artifactId>acorn</artifactId>
+			<artifactId>acorn-cli</artifactId>
 			<version>[1.1-SNAPSHOT,)</version>
 		</dependency>
 	</dependencies>
@@ -101,7 +101,7 @@
 								<configuration>
 									<images>
 										<image>
-											<class>com.avereon.acornmod.AcornIcon</class>
+											<class>com.avereon.acorn.AcornIcon</class>
 											<target>${images-folder}/product.png</target>
 											<theme>light</theme>
 										</image>

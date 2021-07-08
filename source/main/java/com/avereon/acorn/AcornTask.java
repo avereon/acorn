@@ -1,6 +1,6 @@
-package com.avereon.acornmod;
+package com.avereon.acorn;
 
-import com.avereon.acorn.AcornChecker;
+import com.avereon.acorncli.AcornChecker;
 import com.avereon.xenon.task.Task;
 
 public class AcornTask extends Task<Long> {

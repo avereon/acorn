@@ -1,4 +1,4 @@
-package com.avereon.acornmod;
+package com.avereon.acorn;
 
 import com.avereon.xenon.Mod;
 import com.avereon.xenon.ToolRegistration;

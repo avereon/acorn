@@ -1,4 +1,4 @@
-package com.avereon.acornmod;
+package com.avereon.acorn;
 
 import com.avereon.zerra.color.Colors;
 import com.avereon.zerra.image.RenderedIcon;

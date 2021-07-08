@@ -1,4 +1,4 @@
-name: Avereon Acorn Continuous
+name: CI
 
 on:
   push:
@@ -11,7 +11,7 @@ on:
     - cron: '40 12 * * *'
 
 env:
-  AVN_PRODUCT: "acornmod"
+  AVN_PRODUCT: "acorn"
   # The default release, should be overridden in config.sh
   AVN_RELEASE: "latest"
   # The default platform, should be overridden in the platform binaries jobs below
