@@ -8,7 +8,7 @@ import com.avereon.xenon.asset.Asset;
 import com.avereon.xenon.asset.OpenAssetRequest;
 import com.avereon.xenon.task.TaskEvent;
 import com.avereon.xenon.workpane.ToolException;
-import com.avereon.zerra.javafx.Fx;
+import com.avereon.zarra.javafx.Fx;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
