@@ -1,7 +1,7 @@
 package com.avereon.acorn;
 
 import com.avereon.product.Rb;
-import com.avereon.xenon.BundleKey;
+import com.avereon.xenon.RbKey;
 import com.avereon.xenon.ProgramProduct;
 import com.avereon.xenon.ProgramTool;
 import com.avereon.xenon.asset.Asset;
@@ -45,8 +45,8 @@ public class AcornTool extends ProgramTool {
 		getStyleClass().addAll( "acorn-tool" );
 		setIcon( "acorn" );
 
-		String acornText = Rb.text( BundleKey.LABEL, "acorn" );
-		String startText = Rb.text( BundleKey.LABEL, "start" );
+		String acornText = Rb.text( RbKey.LABEL, "acorn" );
+		String startText = Rb.text( RbKey.LABEL, "start" );
 		String waitingText = Rb.text( "message", "waiting-to-start" );
 
 		cpuLoadListener = d -> log.atFine().log( "cpu=%s", d );
@@ -103,8 +103,8 @@ public class AcornTool extends ProgramTool {
 	}
 
 	private void updateButtonText() {
-		String startText = Rb.text( BundleKey.LABEL, "start" );
-		String cancelText = Rb.text( BundleKey.LABEL, "cancel" );
+		String startText = Rb.text( RbKey.LABEL, "start" );
+		String cancelText = Rb.text( RbKey.LABEL, "cancel" );
 		Fx.run( () -> button.setText( isRunning() ? cancelText : startText ) );
 	}
 
