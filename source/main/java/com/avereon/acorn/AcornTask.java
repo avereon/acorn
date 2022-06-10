@@ -1,21 +1,26 @@
 package com.avereon.acorn;
 
-import com.avereon.acorncli.AcornChecker;
+import com.avereon.acorncli.AcornMonitor;
+import com.avereon.acorncli.AcornCounter;
 import com.avereon.xenon.task.Task;
 
 public class AcornTask extends Task<Long> {
 
-	private final AcornChecker checker;
+	//private final AcornChecker checker;
+
+	private final AcornCounter counterOne;
 
 	public AcornTask() {
-		checker = new AcornChecker();
-		setTotal( checker.getStepCount() );
-		checker.addListener( this::setProgress );
+		counterOne = new AcornMonitor();
+		setTotal( counterOne.getTotal() );
+		counterOne.addListener( this::setProgress );
 	}
 
 	@Override
 	public Long call() throws Exception {
-		return checker.call();
+		counterOne.start();
+		counterOne.join();
+		return counterOne.getScore();
 	}
 
 }
