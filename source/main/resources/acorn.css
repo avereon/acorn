@@ -1,10 +1,14 @@
 .acorn-tool .layout {
-	-fx-spacing: 2em;
+	-fx-spacing: 0.5em;
 	-fx-alignment: center;
 }
 
+.acorn-tool .icon {
+	-fx-font-size: 1em;
+}
+
 .acorn-tool .result {
-	-fx-font-size: 5em;
+	-fx-font-size: 2em;
 }
 
 .acorn-tool .progress {
@@ -14,4 +18,12 @@
 
 .acorn-tool .message {
 	#-fx-font-size: 2em;
+}
+
+.score-graph {
+	-fx-padding: 2em;
+}
+
+.score-graph .divider {
+	-fx-stroke: -fx-text-base-color;
 }

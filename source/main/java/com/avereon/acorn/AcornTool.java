@@ -1,18 +1,21 @@
 package com.avereon.acorn;
 
 import com.avereon.product.Rb;
-import com.avereon.xenon.RbKey;
 import com.avereon.xenon.ProgramProduct;
 import com.avereon.xenon.ProgramTool;
+import com.avereon.xenon.RbKey;
 import com.avereon.xenon.asset.Asset;
 import com.avereon.xenon.asset.OpenAssetRequest;
 import com.avereon.xenon.task.TaskEvent;
 import com.avereon.xenon.workpane.ToolException;
 import com.avereon.zarra.javafx.Fx;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.ProgressIndicator;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import lombok.CustomLog;
 
@@ -37,7 +40,13 @@ public class AcornTool extends ProgramTool {
 
 	private final Label message;
 
+	private final ScoreGraph scoreGraph;
+
 	private AcornTask checker;
+
+	private AcornScore allThreadScore;
+
+	private AcornScore oneThreadScore;
 
 	public AcornTool( ProgramProduct product, Asset asset ) {
 		super( product, asset );
@@ -45,15 +54,15 @@ public class AcornTool extends ProgramTool {
 		getStyleClass().addAll( "acorn-tool" );
 		setIcon( "acorn" );
 
-		String acornText = Rb.text( RbKey.LABEL, "acorn" );
-		String startText = Rb.text( RbKey.LABEL, "start" );
 		String waitingText = Rb.text( "message", "waiting-to-start" );
 
 		cpuLoadListener = d -> log.atFine().log( "cpu=%s", d );
 
-		result = new Label( "", getProgram().getIconLibrary().getIcon( "acorn", 64 ) );
+		Label icon = new Label( "One Thread", getProgram().getIconLibrary().getIcon( "acorn", 32 ) );
+		icon.getStyleClass().addAll( "icon" );
+		result = new Label( "----" );
 		result.getStyleClass().addAll( "result" );
-		button = new Button( startText );
+		button = new Button();
 		//button.getStyleClass().addAll( "button" );
 		progress = new ProgressBar( 0 );
 		progress.getStyleClass().addAll( "progress" );
@@ -61,10 +70,21 @@ public class AcornTool extends ProgramTool {
 		message.getStyleClass().addAll( "message" );
 
 		button.setOnAction( e -> toggle() );
+		updateButtonState();
 
-		VBox box = new VBox( result, progress, button );
+		scoreGraph = new ScoreGraph();
+
+		HBox test = new HBox( icon, button, progress, result );
+		test.getStyleClass().addAll( "layout" );
+
+		VBox box = new VBox( test );
 		box.getStyleClass().addAll( "layout" );
-		getChildren().add( box );
+		HBox.setHgrow( box, Priority.ALWAYS );
+
+		HBox parts = new HBox( box, scoreGraph );
+		parts.getStyleClass().addAll( "layout" );
+
+		getChildren().add( parts );
 	}
 
 	@Override
@@ -87,7 +107,11 @@ public class AcornTool extends ProgramTool {
 	}
 
 	private void setScore( long score ) {
-		Fx.run( () -> result.setText( String.valueOf( score ) ) );
+		Fx.run( () -> {
+			scoreGraph.removeScore( oneThreadScore );
+			result.setText( String.valueOf( score ) );
+			scoreGraph.addScore( oneThreadScore = new AcornScore( false, score, "Your Computer One Thread" ) );
+		} );
 	}
 
 	private boolean isRunning() {
@@ -102,17 +126,22 @@ public class AcornTool extends ProgramTool {
 		}
 	}
 
-	private void updateButtonText() {
+	private void updateButtonState() {
 		String startText = Rb.text( RbKey.LABEL, "start" );
 		String cancelText = Rb.text( RbKey.LABEL, "cancel" );
-		Fx.run( () -> button.setText( isRunning() ? cancelText : startText ) );
+		Node pauseIcon = getProgram().getIconLibrary().getIcon( "pause" );
+		Node playIcon = getProgram().getIconLibrary().getIcon( "play" );
+		Fx.run( () -> {
+			button.setGraphic( isRunning() ? pauseIcon : playIcon );
+			//button.setText( isRunning() ? cancelText : startText );
+		} );
 	}
 
 	private void start() {
 		checker = new AcornTask();
 		checker.register( TaskEvent.SUBMITTED, e -> {
 			Fx.run( () -> progress.setProgress( 0 ) );
-			updateButtonText();
+			updateButtonState();
 		} );
 		checker.register( TaskEvent.PROGRESS, e -> Fx.run( () -> progress.setProgress( e.getTask().getPercent() ) ) );
 		checker.register( TaskEvent.SUCCESS, e -> Fx.run( () -> {
@@ -123,7 +152,7 @@ public class AcornTool extends ProgramTool {
 			}
 		} ) );
 		checker.register( TaskEvent.CANCEL, e -> Fx.run( () -> progress.setProgress( 0 ) ) );
-		checker.register( TaskEvent.FINISH, e -> updateButtonText() );
+		checker.register( TaskEvent.FINISH, e -> updateButtonState() );
 
 		getProgram().getTaskManager().submit( checker );
 	}
