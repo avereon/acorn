@@ -50,7 +50,9 @@ public class ScoreGraph extends Pane {
 		getChildren().addAll( divider );
 
 		addScore( new AcornScore( false, 3840, "16-Core AMD Ryzen 9 5950X All Threads" ) );
+		addScore( new AcornScore( false, 712, "4-Core Steam Deck All Threads" ) );
 		addScore( new AcornScore( false, 270, "16-Core AMD Ryzen 9 5950X One Thread" ) );
+		addScore( new AcornScore( false, 196, "4-Core Steam Deck One Thread" ) );
 		addScore( new AcornScore( false, 107, "4-Core Intel Core i3-2120 One Thread" ) );
 		addScore( new AcornScore( false, 20, "4-Core Raspberry PI 3 All Threads" ) );
 		addScore( new AcornScore( false, 6, "4-Core Raspberry PI 3 One Thread" ) );
