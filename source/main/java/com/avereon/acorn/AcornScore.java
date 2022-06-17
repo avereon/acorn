@@ -1,5 +1,6 @@
 package com.avereon.acorn;
 
+import com.avereon.util.TextUtil;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.scene.Node;
@@ -20,7 +21,7 @@ public class AcornScore extends Label {
 	}
 
 	public AcornScore( boolean left, long score, String text, Node graphic ) {
-		super( text, graphic );
+		super( getText( left, score, text ), graphic );
 		this.score = score;
 		this.left = new SimpleBooleanProperty( left );
 	}
@@ -31,6 +32,11 @@ public class AcornScore extends Label {
 
 	public long getScore() {
 		return score;
+	}
+
+	private static String getText( boolean left, long score, String text ) {
+		if( TextUtil.isEmpty( text ) ) return String.valueOf( score );
+		return left ? text + " - " + score : score + " - " + text;
 	}
 
 }

@@ -30,13 +30,13 @@ public class ScoreGraph extends Pane {
 		divider = new Line();
 		divider.getStyleClass().add( "divider" );
 
-		AcornScore top = addScore( new AcornScore( true, TOP_LIMIT, String.valueOf( TOP_LIMIT ) ) );
-		AcornScore base = addScore( new AcornScore( true, 0, "0" ) );
+		AcornScore top = addScore( new AcornScore( true, TOP_LIMIT, "" ) );
+		AcornScore base = addScore( new AcornScore( true, 0, "" ) );
 
 		int exp = 1;
 		long value = (long)Math.pow(10, exp);
 		while( value < TOP_LIMIT ) {
-			addScore( new AcornScore( true, value, String.valueOf( value ) ) );
+			addScore( new AcornScore( true, value, "" ) );
 			value = (long)Math.pow(10, ++exp);
 		}
 
@@ -49,13 +49,13 @@ public class ScoreGraph extends Pane {
 
 		getChildren().addAll( divider );
 
-		addScore( new AcornScore( false, 3840, "16-Core AMD Ryzen 9 5950X All Threads" ) );
-		addScore( new AcornScore( false, 712, "4-Core Steam Deck All Threads" ) );
-		addScore( new AcornScore( false, 270, "16-Core AMD Ryzen 9 5950X One Thread" ) );
-		addScore( new AcornScore( false, 196, "4-Core Steam Deck One Thread" ) );
-		addScore( new AcornScore( false, 107, "4-Core Intel Core i3-2120 One Thread" ) );
-		addScore( new AcornScore( false, 60, "4-Core Raspberry PI 3 All Threads" ) );
-		addScore( new AcornScore( false, 17, "4-Core Raspberry PI 3 One Thread" ) );
+		addScore( new AcornScore( false, 3840, "AMD Ryzen 9 5950X - 32 Threads" ) );
+		addScore( new AcornScore( false, 712, "Steam Deck - 8 Threads" ) );
+		addScore( new AcornScore( false, 270, "AMD Ryzen 9 5950X - 1 Thread" ) );
+		addScore( new AcornScore( false, 196, "Steam Deck - 1 Thread" ) );
+		addScore( new AcornScore( false, 107, "Intel Core i3-2120 - 1 Thread" ) );
+		addScore( new AcornScore( false, 60, "Raspberry PI 3 - 4 Threads" ) );
+		addScore( new AcornScore( false, 17, "Raspberry PI 3 - 1 Thread" ) );
 	}
 
 	ObservableSet<AcornScore> scoresProperty() {

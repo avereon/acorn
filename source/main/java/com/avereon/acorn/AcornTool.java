@@ -110,7 +110,7 @@ public class AcornTool extends ProgramTool {
 		Fx.run( () -> {
 			scoreGraph.removeScore( oneThreadScore );
 			result.setText( String.valueOf( score ) );
-			scoreGraph.addScore( oneThreadScore = new AcornScore( false, score, "Your Computer One Thread" ) );
+			scoreGraph.addScore( oneThreadScore = new AcornScore( true, score, "Your Computer - 1 Thread" ) );
 		} );
 	}
 
