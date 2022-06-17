@@ -6,21 +6,19 @@ import com.avereon.xenon.task.Task;
 
 public class AcornTask extends Task<Long> {
 
-	//private final AcornChecker checker;
+	private final AcornCounter counter;
 
-	private final AcornCounter counterOne;
-
-	public AcornTask() {
-		counterOne = new AcornMonitor();
-		setTotal( counterOne.getTotal() );
-		counterOne.addListener( this::setProgress );
+	public AcornTask( int threads ) {
+		counter = new AcornMonitor( threads );
+		setTotal( counter.getTotal() );
+		counter.addListener( this::setProgress );
 	}
 
 	@Override
 	public Long call() throws Exception {
-		counterOne.start();
-		counterOne.join();
-		return counterOne.getScore();
+		counter.start();
+		counter.join();
+		return counter.getScore();
 	}
 
 }
