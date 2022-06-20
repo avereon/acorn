@@ -36,14 +36,14 @@ public class AcornTool extends ProgramTool {
 
 		int threads = Runtime.getRuntime().availableProcessors();
 
-		AcornTest oneThreadTest = new AcornTest( this, "One Thread", 1 );
 		AcornTest allThreadsTest = new AcornTest( this, "All Threads", threads );
-		VBox box = new VBox( oneThreadTest, allThreadsTest );
+		AcornTest oneThreadTest = new AcornTest( this, "One Thread", 1 );
+		VBox box = new VBox( allThreadsTest, oneThreadTest );
 		box.getStyleClass().addAll( "layout" );
 		HBox.setHgrow( box, Priority.ALWAYS );
 
 		HBox parts = new HBox( box, scoreGraph );
-		parts.getStyleClass().addAll( "layout" );
+		parts.getStyleClass().addAll( "left" );
 
 		getChildren().add( parts );
 	}
