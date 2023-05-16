@@ -1,7 +1,7 @@
 package com.avereon.acorn;
 
 import com.avereon.product.Rb;
-import com.avereon.xenon.Program;
+import com.avereon.xenon.Xenon;
 import com.avereon.xenon.RbKey;
 import com.avereon.xenon.task.TaskEvent;
 import com.avereon.zarra.javafx.Fx;
@@ -60,7 +60,7 @@ public class AcornTest extends HBox {
 		getChildren().addAll( button, titleLabel, progress, result );
 	}
 
-	private Program getProgram() {
+	private Xenon getProgram() {
 		return tool.getProgram();
 	}
 
