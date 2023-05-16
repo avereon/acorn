@@ -3,7 +3,6 @@ package com.avereon.acorn;
 import com.avereon.product.Rb;
 import com.avereon.xenon.RbKey;
 import com.avereon.xenon.Xenon;
-import com.avereon.xenon.ProgramProduct;
 import com.avereon.xenon.asset.*;
 
 public class AcornAssetType extends AssetType {
