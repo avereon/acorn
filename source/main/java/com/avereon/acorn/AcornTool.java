@@ -1,6 +1,7 @@
 package com.avereon.acorn;
 
 import com.avereon.xenon.ProgramTool;
+import com.avereon.xenon.XenonProgramProduct;
 import com.avereon.xenon.asset.Asset;
 import com.avereon.xenon.asset.OpenAssetRequest;
 import com.avereon.xenon.workpane.ToolException;
@@ -23,7 +24,7 @@ public class AcornTool extends ProgramTool {
 
 	private final ScoreGraph scoreGraph;
 
-	public AcornTool( ProgramProduct product, Asset asset ) {
+	public AcornTool( XenonProgramProduct product, Asset asset ) {
 		super( product, asset );
 		addStylesheet( AcornMod.STYLESHEET );
 		getStyleClass().addAll( "acorn-tool" );

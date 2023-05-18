@@ -3,6 +3,7 @@ package com.avereon.acorn;
 import com.avereon.product.Rb;
 import com.avereon.xenon.RbKey;
 import com.avereon.xenon.Xenon;
+import com.avereon.xenon.XenonProgramProduct;
 import com.avereon.xenon.asset.*;
 
 public class AcornAssetType extends AssetType {
@@ -11,7 +12,7 @@ public class AcornAssetType extends AssetType {
 
 	public static final java.net.URI URI = java.net.URI.create( uriPattern );
 
-	public AcornAssetType( ProgramProduct product ) {
+	public AcornAssetType( XenonProgramProduct product ) {
 		super( product, "acorn" );
 
 		PlaceholderCodec codec = new PlaceholderCodec();
