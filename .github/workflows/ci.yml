@@ -101,6 +101,10 @@ jobs:
         run: |
           mvn ${{env.MAVEN_PARMS}} verify -P testui,packs
 
+      - name: Create Deploy Target
+        run: |
+          ssh -t ${{env.AVN_REPO_USERNAME}}@avereon.com "mkdir -p ${{env.PRODUCT_DEPLOY_PATH}};"
+
       - name: Deploy Product Pack
         run: |
           scp -B target/*product.jar ${{env.AVN_REPO_USERNAME}}@avereon.com:${PRODUCT_DEPLOY_PATH} 2>&1
