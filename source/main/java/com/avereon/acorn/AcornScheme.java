@@ -12,9 +12,15 @@ public class AcornScheme extends BaseScheme {
 		super( program, ID );
 	}
 
-
 	@Override
 	public boolean exists( Asset asset ) {
-		return asset.getUri().getSchemeSpecificPart().equals( "acorn" );
+		String ssp = asset.getUri().getSchemeSpecificPart();
+		return ssp.equals( "tester" ) || ssp.equals( "acorn" );
 	}
+
+	@Override
+	public boolean canLoad( Asset asset ) {
+		return true;
+	}
+
 }
