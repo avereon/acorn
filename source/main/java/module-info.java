@@ -1,4 +1,5 @@
 import com.avereon.acorn.AcornMod;
+import com.avereon.xenon.Module;
 
 module com.avereon.acorn {
 
@@ -15,6 +16,6 @@ module com.avereon.acorn {
 
 	exports com.avereon.acorn to com.avereon.xenon, com.avereon.zarra;
 
-	provides com.avereon.xenon.Mod with AcornMod;
+	provides Module with AcornMod;
 
 }

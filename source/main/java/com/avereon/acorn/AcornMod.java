@@ -1,11 +1,11 @@
 package com.avereon.acorn;
 
-import com.avereon.xenon.Mod;
+import com.avereon.xenon.Module;
 import com.avereon.xenon.ToolRegistration;
 import lombok.CustomLog;
 
 @CustomLog
-public class AcornMod extends Mod {
+public class AcornMod extends Module {
 
 	public static final String STYLESHEET = "acorn.css";
 
