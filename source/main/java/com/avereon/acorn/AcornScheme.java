@@ -2,9 +2,9 @@ package com.avereon.acorn;
 
 import com.avereon.xenon.Xenon;
 import com.avereon.xenon.asset.Asset;
-import com.avereon.xenon.scheme.BaseScheme;
+import com.avereon.xenon.scheme.ProductScheme;
 
-public class AcornScheme extends BaseScheme {
+public class AcornScheme extends ProductScheme {
 
 	public static final String ID = "acorn";
 
