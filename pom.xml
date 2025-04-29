@@ -8,12 +8,12 @@
 	<parent>
 		<groupId>com.avereon.pom</groupId>
 		<artifactId>mod</artifactId>
-		<version>3.5.8</version>
+		<version>3.6.0</version>
 	</parent>
 
 	<groupId>com.avereon</groupId>
 	<artifactId>acorn</artifactId>
-	<version>1.2.5</version>
+	<version>1.2.6-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>Acorn</name>
@@ -45,7 +45,7 @@
 	</pluginRepositories>
 
 	<properties>
-		<cameo.version>2.10</cameo.version>
+		<cameo.version>2.11</cameo.version>
 		<images-folder>target/main/images</images-folder>
 	</properties>
 
@@ -53,7 +53,7 @@
 		<dependency>
 			<groupId>com.avereon</groupId>
 			<artifactId>acorn-cli</artifactId>
-			<version>1.2.3</version>
+			<version>1.2.4-SNAPSHOT</version>
 			<scope>compile</scope>
 		</dependency>
 	</dependencies>
@@ -119,4 +119,3 @@
 	</profiles>
 
 </project>
-
