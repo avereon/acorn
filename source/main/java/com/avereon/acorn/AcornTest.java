@@ -113,7 +113,7 @@ public class AcornTest extends HBox {
 		Fx.run( () -> {
 			tool.getScoreGraph().removeScore( this.score );
 			result.setText( String.valueOf( score ) );
-			tool.getScoreGraph().addScore( this.score = new AcornScore( true, score, "Your Computer " + title ) );
+			tool.getScoreGraph().addScore( this.score = new AcornScore( true, score, title ) );
 		} );
 	}
 

@@ -6,7 +6,6 @@ import com.avereon.xenon.asset.Asset;
 import com.avereon.xenon.asset.OpenAssetRequest;
 import com.avereon.xenon.workpane.ToolException;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import lombok.CustomLog;
 
@@ -32,18 +31,20 @@ public class AcornTool extends ProgramTool {
 
 		cpuLoadListener = d -> log.atFine().log( "cpu=%s", d );
 
-		scoreGraph = new ScoreGraph();
-
 		int threads = Runtime.getRuntime().availableProcessors();
 
-		AcornTest allThreadsTest = new AcornTest( this, "All Threads", threads );
-		AcornTest oneThreadTest = new AcornTest( this, "One Thread", 1 );
-		VBox box = new VBox( allThreadsTest, oneThreadTest );
-		box.getStyleClass().addAll( "layout" );
-		HBox.setHgrow( box, Priority.ALWAYS );
+		AcornTest allThreadsTest = new AcornTest( this, threads + " Threads", threads );
+		AcornTest oneThreadTest = new AcornTest( this, "1 Thread", 1 );
+		VBox testBox = new VBox( allThreadsTest, oneThreadTest );
+		testBox.setPrefWidth( 700 );
+		testBox.setMinWidth( 400 );
 
-		HBox parts = new HBox( box, scoreGraph );
-		parts.getStyleClass().addAll( "left" );
+		scoreGraph = new ScoreGraph();
+		scoreGraph.setPrefWidth( 300 );
+		scoreGraph.setMinWidth( 300 );
+
+		HBox parts = new HBox( testBox, scoreGraph );
+		parts.setFillHeight( true );
 
 		getChildren().add( parts );
 	}
