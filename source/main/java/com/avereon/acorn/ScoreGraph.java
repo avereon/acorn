@@ -52,6 +52,8 @@ public class ScoreGraph extends Pane {
 		addScore( new AcornScore( false, 4800, "AMD Ryzen 9 5950X - 32 Threads" ) );
 		addScore( new AcornScore( false, 340, "AMD Ryzen 9 5950X - 1 Thread" ) );
 		addScore( new AcornScore( false, 712, "Steam Deck - 8 Threads" ) );
+		//addScore( new AcornScore( false, 672, "Intel N97 - 4 Threads" ) );
+		//addScore( new AcornScore( false, 220, "Intel N97 - 1 Threads" ) );
 		addScore( new AcornScore( false, 196, "Steam Deck - 1 Thread" ) );
 		addScore( new AcornScore( false, 107, "Intel Core i3-2120 - 1 Thread" ) );
 		addScore( new AcornScore( false, 68, "MintBox Mini - 4 Threads" ) );
