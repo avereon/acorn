@@ -9,7 +9,7 @@ public class AcornMod extends Module {
 
 	public static final String STYLESHEET = "acorn.css";
 
-	private AcornAssetType acornAssetType;
+	private AcornResourceType acornAssetType;
 
 	public AcornMod() {
 		super();
@@ -22,7 +22,7 @@ public class AcornMod extends Module {
 
 		getProgram().getAssetManager().addScheme( new AcornScheme( getProgram() ) );
 
-		registerAssetType( acornAssetType = new AcornAssetType( this ) );
+		registerAssetType( acornAssetType = new AcornResourceType( this ) );
 		ToolRegistration design2dEditorRegistration = new ToolRegistration( this, AcornTool.class );
 		design2dEditorRegistration.setName( "Acorn Counting Tool" );
 		registerTool( acornAssetType, design2dEditorRegistration );
