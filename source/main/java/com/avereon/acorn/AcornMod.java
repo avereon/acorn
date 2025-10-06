@@ -20,7 +20,7 @@ public class AcornMod extends Module {
 		super.startup();
 		registerIcon( "acorn", new AcornIcon() );
 
-		getProgram().getAssetManager().addScheme( new AcornScheme( getProgram() ) );
+		getProgram().getResourceManager().addScheme( new AcornScheme( getProgram() ) );
 
 		registerAssetType( acornAssetType = new AcornResourceType( this ) );
 		ToolRegistration design2dEditorRegistration = new ToolRegistration( this, AcornTool.class );
@@ -33,7 +33,7 @@ public class AcornMod extends Module {
 		unregisterTool( acornAssetType, AcornTool.class );
 		unregisterAssetType( acornAssetType );
 
-		getProgram().getAssetManager().removeScheme( AcornScheme.ID );
+		getProgram().getResourceManager().removeScheme( AcornScheme.ID );
 
 		unregisterIcon( getCard().getArtifact(), new AcornIcon() );
 		super.shutdown();

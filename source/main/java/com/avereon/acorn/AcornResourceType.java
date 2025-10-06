@@ -34,7 +34,7 @@ public class AcornResourceType extends ResourceType {
 		asset.setName( Rb.text( RbKey.ASSET, "acorn-name") );
 
 		// Setting the scheme when the asset is opened solves a bunch of "new" asset problems
-		asset.setScheme( program.getAssetManager().getScheme( URI.getScheme() ) );
+		asset.setScheme( program.getResourceManager().getScheme( URI.getScheme() ) );
 
 		asset.setModified( false );
 		return true;
