@@ -2,7 +2,7 @@ package com.avereon.acorn;
 
 import com.avereon.xenon.ProgramTool;
 import com.avereon.xenon.XenonProgramProduct;
-import com.avereon.xenon.asset.Asset;
+import com.avereon.xenon.asset.Resource;
 import com.avereon.xenon.asset.OpenAssetRequest;
 import com.avereon.xenon.workpane.ToolException;
 import javafx.scene.layout.HBox;
@@ -23,8 +23,8 @@ public class AcornTool extends ProgramTool {
 
 	private final ScoreGraph scoreGraph;
 
-	public AcornTool( XenonProgramProduct product, Asset asset ) {
-		super( product, asset );
+	public AcornTool( XenonProgramProduct product, Resource resource ) {
+		super( product, resource );
 		addStylesheet( AcornMod.STYLESHEET );
 		getStyleClass().addAll( "acorn-tool" );
 		setIcon( "acorn" );
@@ -59,7 +59,7 @@ public class AcornTool extends ProgramTool {
 	@Override
 	protected void ready( OpenAssetRequest request ) throws ToolException {
 		super.ready( request );
-		setTitle( request.getAsset().getName() );
+		setTitle( request.getResource().getName() );
 	}
 
 	@Override
