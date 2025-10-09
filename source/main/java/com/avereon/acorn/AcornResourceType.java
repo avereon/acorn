@@ -4,10 +4,10 @@ import com.avereon.product.Rb;
 import com.avereon.xenon.RbKey;
 import com.avereon.xenon.Xenon;
 import com.avereon.xenon.XenonProgramProduct;
-import com.avereon.xenon.asset.Resource;
-import com.avereon.xenon.asset.ResourceType;
-import com.avereon.xenon.asset.Codec;
-import com.avereon.xenon.asset.PlaceholderCodec;
+import com.avereon.xenon.resource.Resource;
+import com.avereon.xenon.resource.ResourceType;
+import com.avereon.xenon.resource.Codec;
+import com.avereon.xenon.resource.PlaceholderCodec;
 
 public class AcornResourceType extends ResourceType {
 
